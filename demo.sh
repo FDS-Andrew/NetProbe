@@ -14,6 +14,7 @@ echo "Acquired active IPs."
 echo "Probing for open ports."
 file="ip_list"
 rm port_log.gnmap 2> /dev/null
+touch port_log.gnmap
 while read -r line; do
 	nmap -sS $line -T5 -oG port_log.gnmap -vv --append-output &> /dev/null &	# probe ports in parallel
 done < $file
