@@ -28,10 +28,10 @@ dhcp_scan(){
 		nmap -sU --script=dhcp-discover $dhcp_ip --min-parallelism 10000 -T5 -oX ./log/dhcp_log.xml &> /dev/null	## scan dhcp server ip with script, results stored in xml
 		echo "Status: DHCP scan done".
 		### check if dhcp server is in another network
-		if [[ ! $(grep $dhcp_ip ./lists/ip_list.txt) ]]
-		then
+		#if [[ ! $(grep $dhcp_ip ./lists/ip_list.txt) ]]
+		#then
     		## run a scan in the network
-		fi
+		#fi
 	fi
 }
 
